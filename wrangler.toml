@@ -1,0 +1,16 @@
+# Cloudflare Worker config for contact-relay.
+# Deploy: `wrangler deploy` (after `wrangler secret put TELEGRAM_BOT_TOKEN`
+# and `wrangler secret put TELEGRAM_CHAT_ID`).
+
+name = "contact-relay"
+main = "src/index.ts"
+compatibility_date = "2025-04-01"
+
+# Public env vars — committed to repo, no secrets here.
+[vars]
+ALLOWED_ORIGINS = "https://jhomer192.github.io,http://localhost:4321,http://localhost:3000"
+
+# Secrets (TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID) are NEVER set in this file.
+# They go in via:
+#   wrangler secret put TELEGRAM_BOT_TOKEN
+#   wrangler secret put TELEGRAM_CHAT_ID

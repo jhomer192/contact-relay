@@ -1,0 +1,8 @@
+node_modules
+.dev.vars
+.wrangler
+dist
+*.log
+# This repo uses pnpm; npm/yarn lockfiles are not authoritative.
+package-lock.json
+yarn.lock
